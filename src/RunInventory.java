@@ -1,6 +1,6 @@
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Iterator;
 
 /**
  * Author: Kylee Fields
@@ -15,13 +15,13 @@ public class RunInventory {
         Inventory inventory = new Inventory();
         while (true){
             // print menu
-            System.out.println("\n****** MENU *****");
-            System.out.println("1.Add Book");
-            System.out.println("2.Remove Book");
-            System.out.println("3.Find Book ");
-            System.out.println("4.Display Books");
-            System.out.println("9.Exit Program");
-            System.out.print("Enter your selection : ");
+            System.out.println("\n====== MENU ======");
+            System.out.println("1. Add Book");
+            System.out.println("2. Remove Book");
+            System.out.println("3. Find Book ");
+            System.out.println("4. Display Books");
+            System.out.println("9. Exit Program");
+            System.out.print("Enter your selection (1, 2, 3, 4, or 9): ");
             // take in user input
             Scanner in = new Scanner(System.in);
             int choice = in.nextInt();
@@ -69,8 +69,8 @@ class Book {
     public String toString() {
         return "Book[ " +
                 "id:'" + id + '\'' +
-                ", Title:'" + title + '\'' +
-                ", Price" + price +
+                ",Title:'" + title + '\'' +
+                ",Price" + price +
                 ']';
     }
 }
@@ -92,7 +92,7 @@ class Inventory {
             String id = scanner.next();
             // validates if book already exists
             if (books.containsKey(id)) {
-                System.out.println(" Book id already exist\n");
+                System.out.println("Book id already exist\n");
                 return;
             }
             System.out.print("What is the book price (double value)?: ");
@@ -125,16 +125,16 @@ class Inventory {
             String id = scanner.next();
             // book does not exist scenario
             if (!books.containsKey(id)) {
-                System.out.println(" Book id dose not exist\n");
+                System.out.println("Book id dose not exist\n");
                 return;
             }
             // remove book in hashmap
             books.remove(id);
-            System.out.print("\nBook is removed");
+            System.out.print("\nBook is removed\n");
         }
         // user input validation
         catch (Exception ex){
-            System.out.print("\nInvalid input");
+            System.out.print("\nInvalid input\n");
         }
     }
 
@@ -147,15 +147,15 @@ class Inventory {
             String id = scanner.next();
             // book does not exist scenario
             if (!books.containsKey(id)) {
-                System.out.println(" Book id dose not exist\n");
+                System.out.println("Book id dose not exist\n");
                 return;
             }
             // display found book
-            System.out.print("\n Book found : "+books.get(id));
+            System.out.print("\nBook found : " + books.get(id));
         }
         // user input validation
         catch (Exception ex){
-            System.out.print("\nInvalid input");
+            System.out.print("\nInvalid input\n");
         }
     }
 
